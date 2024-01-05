@@ -88,7 +88,6 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 	top = bottom = make_node((binary_tree_t *)tree);
 	if (top == NULL)
 		exit(1);
-
 	while (top != NULL)
 	{
 		if (top->node->left != NULL)
@@ -101,9 +100,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 			push_node(top->node->left, top, &bottom);
 		}
 		else
-		{
 			flg = 1;
-		}
 		if (top->node->right != NULL)
 		{
 			if (flg == 1)
@@ -114,9 +111,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 			push_node(top->node->right, top, &bottom);
 		}
 		else
-		{
 			flg = 1;
-		}
 		pop_head(&top);
 	}
 	return (1);
